@@ -3,7 +3,7 @@
     crossorigin="true"
     playsinline
     poster="../video/poster.png"
-    src="../video/preview.mp4"
+    src="../video/preview-small.mp4"
     muted
     loop
     autoplay
