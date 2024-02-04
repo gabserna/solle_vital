@@ -1,7 +1,7 @@
 <script lang="ts">
 import { BaseContainer, BaseLogo, ProfileIcon, CartIcon } from "@/shared/ui";
 import { LanguageSelector } from "@/features/LanguageSelector";
-import { LINK_TO_BOX } from "@/shared/lib";
+import { isMobile } from "@/shared/lib";
 import { useTranslation } from "@/app/i18n/hooks";
 
 export default {
@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      LINK_TO_BOX,
+      isMobile,
       t: useTranslation("Header"),
     };
   },
@@ -31,12 +31,18 @@ export default {
         </div>
         <div class="d-flex justify-end">
           <div class="header__box">
-            <a class="header__link" href="https://www.sollenaturals.com/login">
-              login
+            <a
+              class="header__link header__link-profile"
+              href="https://www.sollenaturals.com/login"
+            >
+              <span v-if="!isMobile">login</span>
               <ProfileIcon />
             </a>
             <LanguageSelector />
-            <a class="header__link" href="https://www.sollenaturals.com/cart">
+            <a
+              class="header__link header__link-cart"
+              href="https://www.sollenaturals.com/cart"
+            >
               <CartIcon />
             </a>
           </div>
@@ -59,16 +65,12 @@ export default {
   box-shadow: $box_shadow;
   z-index: $zIndex_50;
 
-  @media (max-width: $mobile) {
-    padding: toRem(4) 0;
-  }
-
   &__box {
     @include flexRow(center);
     column-gap: toRem(30);
 
     @media (max-width: $mobile) {
-      column-gap: toRem(8);
+      column-gap: toRem(20);
     }
   }
 
@@ -80,6 +82,20 @@ export default {
     @media (any-hover: hover) {
       &:hover {
         opacity: 0.8;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      &-profile {
+        & svg {
+          width: toRem(27);
+          height: toRem(27);
+        }
+      }
+
+      &-cart {
+        width: toRem(32);
+        height: toRem(26);
       }
     }
   }

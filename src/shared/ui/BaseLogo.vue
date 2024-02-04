@@ -44,8 +44,8 @@ export default {
   }
 
   @media (max-width: $mobile) {
-    width: toRem(83);
-    height: toRem(34);
+    width: toRem(107);
+    height: toRem(41);
   }
 
   &__image {

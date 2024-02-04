@@ -129,8 +129,8 @@ export default Vue.extend({
       height: toRem(30);
 
       @media (max-width: $mobile) {
-        width: toRem(20);
-        height: toRem(20);
+        width: toRem(24);
+        height: toRem(24);
       }
     }
   }

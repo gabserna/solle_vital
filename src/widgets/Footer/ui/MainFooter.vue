@@ -72,14 +72,13 @@ export default {
 .footer {
   position: relative;
   background-color: $white;
-  z-index: $zIndex_1;
   color: $white;
   padding: toRem(124) toRem(18) toRem(18);
   font-size: toRem(14);
   line-height: 171.428571%; /* 24/14 */
 
   @media (max-width: $mobile) {
-    padding: toRem(76) toRem(8) toRem(8);
+    padding: toRem(74) toRem(8) toRem(8);
   }
 
   &__wrapper {

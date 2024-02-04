@@ -168,9 +168,9 @@ export default Vue.extend({
           </button>
         </div>
       </BaseContainer>
-    </div>
-    <div class="comments__bg">
-      <img :src="Background" alt="background" />
+      <div class="comments__bg">
+        <img :src="Background" alt="background" />
+      </div>
     </div>
   </section>
 </template>
@@ -184,11 +184,24 @@ export default Vue.extend({
 
   &__wrapper {
     background-color: #dfeda6;
+    position: relative;
     padding: toRem(124) 0;
+    overflow: hidden;
+
+    @media (max-width: $mobile) {
+      padding: toRem(45) 0;
+    }
   }
 
   &__header {
+    position: relative;
     text-align: center;
+    z-index: $zIndex_1;
+
+    @media (max-width: $mobile) {
+      max-width: toRem(472);
+      margin: 0 auto;
+    }
   }
 
   &__content {
@@ -212,6 +225,26 @@ export default Vue.extend({
     position: absolute;
     right: 0;
     bottom: -10%;
+
+    @media (max-width: $mobile) {
+      right: auto;
+      left: 0;
+      bottom: 0;
+
+      & img {
+        transform: scale(-1, 1);
+        width: toRem(164);
+        max-height: toRem(383);
+        object-fit: contain;
+        object-position: right;
+      }
+    }
+
+    @media (max-width: $mobileSmall) {
+      & img {
+        max-height: toRem(333);
+      }
+    }
   }
 }
 .comment {
@@ -223,22 +256,51 @@ export default Vue.extend({
   background-color: $white;
   border-radius: toRem(30) toRem(30) toRem(30) 0;
   box-shadow: 2px 4px 4px 0px #bcbab180;
-  min-height: toRem(303);
+  height: toRem(303);
+  overflow-y: auto;
   padding: toRem(24) toRem(48);
+  @include adaptiveValue("height", 303, 350, 1100, 767, 1);
+
+  @media (max-width: $tablet) {
+    padding: toRem(24) toRem(14);
+  }
+
+  @media (max-width: $mobile) {
+    height: toRem(170);
+    max-width: toRem(400);
+    margin: 0 auto;
+  }
 
   &__text {
     font-size: toRem(18);
+
+    @media (max-width: $tablet) {
+      font-size: toRem(16);
+    }
+
+    @media (max-width: $mobile) {
+      font-size: toRem(12);
+      line-height: 150%; /* 18/12 */
+    }
   }
 
   &__name {
     font-weight: 500;
     font-size: toRem(12);
     line-height: 150%; /* 18/12 */
+
+    @media (max-width: $mobile) {
+      font-size: toRem(10);
+    }
   }
 
   &__status {
     font-size: toRem(12);
     line-height: 150%; /* 18/12 */
+
+    @media (max-width: $mobile) {
+      font-size: toRem(8);
+    }
   }
 }
 

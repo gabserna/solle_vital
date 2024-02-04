@@ -112,21 +112,18 @@ export default {
 @import "src/app/assets/styles/variables.scss";
 .health {
   position: relative;
-  padding-top: toRem(164);
+  padding-top: 0;
 
   @media (max-width: $mobile) {
-    padding-top: toRem(64);
+    padding-top: 0;
   }
 
   &__wave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-
     & img {
       width: 100%;
-      aspect-ratio: 1604 / 417;
+      aspect-ratio: 1604 / 164;
+      object-fit: cover;
+      object-position: top center;
     }
   }
 
@@ -142,17 +139,37 @@ export default {
     align-items: center;
     justify-content: space-between;
     gap: toRem(35);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      gap: toRem(12);
+      max-width: toRem(610);
+      margin: 0 auto;
+      text-align: center;
+    }
   }
 
   &__box {
     @include flexColumn();
     row-gap: toRem(24);
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(12);
+    }
   }
 
   &__subtitle {
     @include flexColumn();
     row-gap: toRem(24);
     line-height: 168.75%; /* 27/16 */
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(12);
+    }
+    @media (max-width: $mobileSmall) {
+      text-align: left;
+    }
   }
 
   &__img {
@@ -176,6 +193,11 @@ export default {
 .qty {
   @include flexColumn();
   row-gap: toRem(32);
+  text-align: left;
+
+  @media (max-width: $mobile) {
+    row-gap: toRem(26);
+  }
 
   &__wrap {
     @include flexColumn();
@@ -189,6 +211,14 @@ export default {
       font-size: toRem(16);
       font-weight: 600;
     }
+
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(10);
+
+      & strong {
+        font-size: toRem(12);
+      }
+    }
   }
 
   &__price {
@@ -198,10 +228,9 @@ export default {
 
   &__switcher {
     @include flexRow(center);
-    column-gap: toRem(4);
     background-color: $parchment_cream;
     border-radius: toRem(30);
-    width: toRem(72);
+    width: fit-content;
 
     & button {
       @include flexRow(center, center);
@@ -222,6 +251,12 @@ export default {
         color: $mainColor;
         background-color: #bcbab1;
       }
+
+      @media (max-width: $mobile) {
+        width: toRem(24);
+        height: toRem(24);
+        font-size: toRem(8);
+      }
     }
   }
 
@@ -231,6 +266,10 @@ export default {
 
     & b {
       font-weight: 400;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: toRem(14);
     }
   }
 
@@ -245,6 +284,11 @@ export default {
     font-weight: 400;
     padding: toRem(7.5) toRem(30);
     color: $mainColor;
+
+    @media (max-width: $mobile) {
+      font-size: toRem(12);
+      padding: toRem(8.5) toRem(15);
+    }
   }
 
   &__counter {
@@ -255,8 +299,12 @@ export default {
     padding: toRem(4) toRem(9);
     font-size: toRem(14);
 
+    @media (max-width: $mobile) {
+      font-size: toRem(12);
+    }
+
     & > button {
-      display: inline-block;
+      @include flexRow(center, center);
       width: toRem(19);
       height: toRem(25);
       transition: opacity $transition;
@@ -269,7 +317,7 @@ export default {
     }
 
     & > span {
-      display: inline-block;
+      @include flexRow(center, center);
       text-align: center;
       width: toRem(14);
       height: toRem(25);
@@ -278,6 +326,11 @@ export default {
 
   &__discover {
     font-size: toRem(14);
+
+    @media (max-width: $mobile) {
+      font-size: toRem(10);
+      line-height: 150%; /* 15/10 */
+    }
 
     & > a {
       color: #5fafbb;

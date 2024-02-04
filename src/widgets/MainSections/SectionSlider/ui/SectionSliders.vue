@@ -1,8 +1,9 @@
 <script lang="ts">
 import Vue from "vue";
 import { BaseContainer, BaseAnimation } from "@/shared/ui";
-
+import { isMobile } from "@/shared/lib";
 import Coaster from "../images/coaster.png";
+import MobileCoaster from "../images/coaster-mobile.png";
 
 export default Vue.extend({
   components: {
@@ -12,6 +13,8 @@ export default Vue.extend({
   data() {
     return {
       Coaster,
+      MobileCoaster,
+      isMobile,
     };
   },
 });
@@ -42,9 +45,14 @@ export default Vue.extend({
             </p>
           </BaseAnimation>
         </div>
-        <BaseAnimation :delay="600">
+        <BaseAnimation :delay="600" v-if="!isMobile">
           <div class="coaster__image">
             <img :src="Coaster" alt="coaster" />
+          </div>
+        </BaseAnimation>
+        <BaseAnimation :delay="600" v-if="isMobile">
+          <div class="coaster__image">
+            <img :src="MobileCoaster" alt="coaster" />
           </div>
         </BaseAnimation>
       </div>
@@ -63,6 +71,10 @@ export default Vue.extend({
     width: 100%;
     margin: 0 auto;
     text-align: center;
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(38);
+    }
   }
 
   &__header {
@@ -72,12 +84,24 @@ export default Vue.extend({
     & p {
       line-height: 168.75%; /* 27/16 */
     }
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(18);
+
+      & p {
+        font-size: toRem(12);
+      }
+    }
   }
 
   &__image {
     & img {
       width: 100%;
       aspect-ratio: 1091 / 376;
+
+      @media (max-width: $mobile) {
+        aspect-ratio: 359 / 400;
+      }
     }
   }
 }

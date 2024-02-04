@@ -89,13 +89,11 @@ export default {
               </div>
               <div class="directions">
                 <div class="directions__header">
-                  <BaseAnimation :delay="100"
-                    ><p class="directions__title">
-                      General use directions:
-                    </p></BaseAnimation
-                  >
+                  <BaseAnimation :delay="100">
+                    <p class="directions__title">General use directions:</p>
+                  </BaseAnimation>
                   <BaseAnimation :delay="200">
-                    <p>
+                    <p class="directions__subtitle">
                       Add the contents of one packet to 16-18 oz. of cool water. Use once
                       daily, usually in the morning or afternoon, for best results.
                       SolleVital tastes the best if served ice cold!
@@ -104,46 +102,50 @@ export default {
                 </div>
                 <div class="directions__list">
                   <div v-for="(card, index) in cards" :key="index" class="card">
-                    <div class="card__image">
-                      <BaseAnimation variant="opacity" :delay="200">
-                        <img :src="card.img" :alt="card.title" />
-                      </BaseAnimation>
-                    </div>
-                    <BaseAnimation :delay="100">
-                      <p class="card__title">{{ card.title }}</p>
-                    </BaseAnimation>
-                    <BaseAnimation :delay="200">
-                      <p class="card__subtitle" v-html="card.subtitle" />
-                    </BaseAnimation>
-                    <div class="card__block">
-                      <BaseAnimation :delay="300"
-                        ><strong>Ingredients:</strong></BaseAnimation
-                      >
-                      <BaseAnimation :delay="400">
-                        <ul>
-                          <li
-                            v-for="(item, index) in card.ingredients"
-                            :key="index"
-                            v-html="item"
-                          />
-                        </ul>
-                      </BaseAnimation>
-                    </div>
-                    <div class="card__block">
-                      <BaseAnimation :delay="500"
-                        ><strong>Directions:</strong></BaseAnimation
-                      >
-                      <BaseAnimation :delay="600">
-                        <p>{{ card.directions }}</p>
-                      </BaseAnimation>
-                    </div>
-                    <div class="card__block" v-if="card.variation">
-                      <BaseAnimation :delay="700">
-                        <strong>Variation:</strong>
-                      </BaseAnimation>
-                      <BaseAnimation :delay="800">
-                        <p>{{ card.variation }}</p>
-                      </BaseAnimation>
+                    <div class="card__wrapper">
+                      <div class="card__image">
+                        <BaseAnimation variant="opacity" :delay="200">
+                          <img :src="card.img" :alt="card.title" />
+                        </BaseAnimation>
+                      </div>
+                      <div class="card__content">
+                        <BaseAnimation :delay="100">
+                          <p class="card__title">{{ card.title }}</p>
+                        </BaseAnimation>
+                        <BaseAnimation :delay="200">
+                          <p class="card__subtitle" v-html="card.subtitle" />
+                        </BaseAnimation>
+                        <div class="card__block">
+                          <BaseAnimation :delay="300"
+                            ><strong>Ingredients:</strong></BaseAnimation
+                          >
+                          <BaseAnimation :delay="400">
+                            <ul>
+                              <li
+                                v-for="(item, index) in card.ingredients"
+                                :key="index"
+                                v-html="item"
+                              />
+                            </ul>
+                          </BaseAnimation>
+                        </div>
+                        <div class="card__block">
+                          <BaseAnimation :delay="500"
+                            ><strong>Directions:</strong></BaseAnimation
+                          >
+                          <BaseAnimation :delay="600">
+                            <p>{{ card.directions }}</p>
+                          </BaseAnimation>
+                        </div>
+                        <div class="card__block" v-if="card.variation">
+                          <BaseAnimation :delay="700">
+                            <strong>Variation:</strong>
+                          </BaseAnimation>
+                          <BaseAnimation :delay="800">
+                            <p>{{ card.variation }}</p>
+                          </BaseAnimation>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -199,6 +201,10 @@ export default {
       width: 100%;
       height: 100%;
     }
+
+    @media (max-width: $mobileSmall) {
+      height: 93%;
+    }
   }
 
   &__wave {
@@ -225,7 +231,7 @@ export default {
   }
 
   @media (max-width: $mobileSmall) {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 359 / 187;
   }
 }
 
@@ -239,11 +245,26 @@ export default {
     row-gap: toRem(8);
     text-align: left;
     max-width: toRem(887);
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(4);
+    }
   }
 
   &__title {
     font-size: toRem(24);
     font-weight: 500;
+
+    @media (max-width: $mobile) {
+      font-size: toRem(12);
+    }
+  }
+
+  &__subtitle {
+    @media (max-width: $mobile) {
+      font-size: toRem(10);
+      line-height: 150%;
+    }
   }
 
   &__list {
@@ -251,34 +272,103 @@ export default {
     row-gap: toRem(124);
     width: 100%;
     margin-top: toRem(80);
+
+    @media (max-width: $tablet) {
+      row-gap: toRem(66);
+      margin-top: toRem(63);
+    }
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(36);
+      margin-top: toRem(33);
+    }
   }
 }
 
 .card {
   width: 100%;
-  border-radius: toRem(20);
-  background-color: #f6f5ef;
-  padding: toRem(50) toRem(80);
-  box-shadow: 0px 3px 4px 2px #bcbab185;
   position: relative;
-  @include flexColumn();
-  row-gap: toRem(20);
-  text-align: left;
-  max-width: toRem(853);
-  margin: 0 auto;
+  padding-right: toRem(112);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @media (max-width: $pc) {
+    padding-right: toRem(80);
+  }
+
+  @media (max-width: $mobile) {
+    padding-right: toRem(40);
+  }
+
+  &__wrapper {
+    position: relative;
+    border-radius: toRem(20);
+    background-color: #f6f5ef;
+    padding: toRem(50) toRem(80);
+    box-shadow: 0px 3px 4px 2px #bcbab185;
+    width: 100%;
+    text-align: left;
+    max-width: toRem(853);
+
+    @media (max-width: $pc) {
+      padding: toRem(38) toRem(32);
+    }
+
+    @media (max-width: $mobile) {
+      padding: toRem(28) toRem(22);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: $zIndex_1;
+    @include flexColumn();
+    row-gap: toRem(20);
+
+    & p {
+      line-height: 150%;
+    }
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(10);
+    }
+  }
 
   &__title {
     font-size: toRem(36);
     max-width: toRem(420);
     line-height: 125%; /* 45/36 */
+    font-weight: 600;
+
+    @media (max-width: $mobile) {
+      font-size: toRem(16);
+      max-width: toRem(200);
+    }
+
+    @media (max-width: $mobileSmall) {
+      max-width: toRem(154);
+    }
   }
 
   &__subtitle {
     max-width: toRem(420);
+
+    @media (max-width: $mobile) {
+      font-size: toRem(10);
+      max-width: toRem(200);
+    }
+    @media (max-width: $mobileSmall) {
+      max-width: toRem(154);
+    }
   }
 
   &__block {
     max-width: toRem(476);
+
+    @media (max-width: $mobile) {
+      font-size: toRem(10);
+    }
   }
 
   &__image {
@@ -286,6 +376,25 @@ export default {
     right: 0;
     top: 0;
     transform: translate(30%, -20%);
+    z-index: $zIndex_1;
+
+    @media (max-width: $pc) {
+      & img {
+        width: toRem(384);
+      }
+    }
+
+    @media (max-width: $tablet) {
+      & img {
+        width: toRem(284);
+      }
+    }
+
+    @media (max-width: $mobile) {
+      & img {
+        width: toRem(184);
+      }
+    }
   }
 }
 </style>

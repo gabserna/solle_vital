@@ -1,6 +1,7 @@
 @import "../variables";
 
 :root {
+  --font-size: 16px;
   --main-color: #2e2930;
 
   --accent: #c0df16;
@@ -19,7 +20,8 @@
   --padding-сontainer: 2.75rem;
 
   @media (max-width: $mobile) {
-    --header-height: 42px;
+    --font-size: 14px;
+    --header-height: 51px;
     --padding-сontainer-minus: -1.5rem;
     --padding-сontainer: 1.5rem;
   }

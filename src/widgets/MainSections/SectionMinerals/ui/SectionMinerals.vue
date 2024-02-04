@@ -1,6 +1,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { BaseContainer, BaseAnimation } from "@/shared/ui";
+import { isMobile } from "@/shared/lib";
 
 import Wave from "../images/wave.png";
 import BottomWave from "../images/wave-bottom.png";
@@ -16,6 +17,7 @@ export default Vue.extend({
       Wave,
       BottomWave,
       Broccoli,
+      isMobile,
     };
   },
 });
@@ -69,7 +71,12 @@ export default Vue.extend({
                 </p>
               </BaseAnimation>
             </div>
-            <BaseAnimation variant="opacity" :delay="600">
+            <BaseAnimation variant="opacity" :delay="600" v-if="!isMobile">
+              <div class="coaster__img">
+                <img :src="Broccoli" alt="Broccoli" />
+              </div>
+            </BaseAnimation>
+            <BaseAnimation variant="slideDown" :delay="1200" v-if="isMobile">
               <div class="coaster__img">
                 <img :src="Broccoli" alt="Broccoli" />
               </div>
@@ -129,17 +136,32 @@ export default Vue.extend({
     align-items: center;
     justify-content: space-between;
     margin-top: toRem(58);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      row-gap: toRem(38);
+      margin-top: toRem(21);
+    }
   }
 
   &__info {
     @include flexColumn();
     row-gap: toRem(20);
+
+    @media (max-width: $mobile) {
+      text-align: center;
+      font-size: toRem(12);
+    }
   }
 
   &__img {
     & img {
       width: 100%;
       aspect-ratio: 591 / 421;
+    }
+
+    @media (max-width: $mobile) {
+      transform: translateX(10%);
     }
   }
 }

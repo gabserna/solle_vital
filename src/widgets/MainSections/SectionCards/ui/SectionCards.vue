@@ -47,7 +47,7 @@ export default defineComponent({
                   <li>Helps restore red blood cells</li>
                 </ul>
               </div>
-              <p>
+              <p class="phyll__text">
                 Chlorophyll may be famous for giving plants their green color, but its
                 purposes do not end there. It's also packed with hundreds of nutrients
                 essential for human health and has dozens of positive effects on overall
@@ -83,9 +83,18 @@ export default defineComponent({
 .chlorophyll {
   overflow-x: hidden;
 
+  @media (max-width: $mobile) {
+    overflow: hidden;
+    padding-bottom: toRem(150);
+  }
+
   &__content {
     @include flexColumn();
     row-gap: toRem(90);
+
+    @media (max-width: $mobileSmall) {
+      row-gap: toRem(60);
+    }
   }
 
   &__header {
@@ -96,7 +105,7 @@ export default defineComponent({
     z-index: $zIndex_1;
 
     & p {
-      font-size: toRem(36);
+      @include adaptiveValue("font-size", 36, 16, 991, 375, 1);
       font-weight: 300;
     }
   }
@@ -105,6 +114,14 @@ export default defineComponent({
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     min-height: toRem(635);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      row-gap: toRem(38);
+      max-width: toRem(472);
+      margin: 0 auto;
+      min-height: auto;
+    }
   }
 }
 
@@ -115,6 +132,18 @@ export default defineComponent({
   margin-right: toRem(40);
   border-right: toRem(1) solid $mainColor;
 
+  @media (max-width: $tablet) {
+    padding-right: toRem(20);
+    margin-right: toRem(20);
+  }
+
+  @media (max-width: $mobile) {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
+    row-gap: toRem(21);
+  }
+
   &__wrap {
     position: relative;
   }
@@ -123,7 +152,15 @@ export default defineComponent({
     position: absolute;
     top: -23%;
 
-    @include adaptiveValue("left", -70, -324, 1444, 991, 1);
+    @include adaptiveValue("left", -70, -384, 1444, 767, 1);
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue("left", -50, -180, 500, 375, 1);
+
+      & img {
+        width: toRem(449);
+      }
+    }
   }
 
   &__list {
@@ -133,6 +170,10 @@ export default defineComponent({
     text-align: right;
     // padding-left: toRem(350);
     z-index: $zIndex_1;
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(21);
+    }
 
     & li {
       font-weight: 500;
@@ -150,6 +191,16 @@ export default defineComponent({
       &:nth-child(5) {
         padding-right: toRem(6);
       }
+
+      @media (max-width: $mobile) {
+        font-size: toRem(14);
+      }
+    }
+  }
+
+  &__text {
+    @media (max-width: $mobile) {
+      font-size: toRem(12);
     }
   }
 }
@@ -163,17 +214,29 @@ export default defineComponent({
     max-width: toRem(206);
     position: relative;
     z-index: $zIndex_1;
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(34);
+    }
   }
 
   &__title {
     font-size: toRem(30);
     font-weight: 600;
     line-height: 150%; /* 45/30 */
+
+    @media (max-width: $mobile) {
+      font-size: toRem(20);
+    }
   }
 
   &__list {
     @include flexColumn();
     row-gap: toRem(35);
+
+    @media (max-width: $mobile) {
+      row-gap: toRem(57);
+    }
 
     & li {
       line-height: 150%;
@@ -181,6 +244,14 @@ export default defineComponent({
       & strong {
         display: block;
         font-size: toRem(24);
+      }
+
+      @media (max-width: $mobile) {
+        font-size: toRem(12);
+
+        & strong {
+          font-size: toRem(16);
+        }
       }
     }
   }
@@ -190,6 +261,23 @@ export default defineComponent({
     top: -20%;
 
     @include adaptiveValue("right", -100, -224, 1444, 991, 1);
+
+    @media (max-width: $tablet) {
+      top: -15%;
+
+      & img {
+        width: toRem(558);
+      }
+    }
+
+    @media (max-width: $mobile) {
+      top: 0;
+      @include adaptiveValue("right", -150, -200, 500, 375, 1);
+
+      & img {
+        width: toRem(472);
+      }
+    }
   }
 }
 </style>
