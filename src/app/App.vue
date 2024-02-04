@@ -4,14 +4,14 @@ import { MainHeader } from "@/widgets/Header";
 import { MainFooter } from "@/widgets/Footer";
 import {
   SectionPreview,
-  SectionSliders,
-  SectionCards,
-  SectionVideo,
+  SectionMain,
+  SectionKey,
+  SectionCoaster,
+  SectionMinerals,
+  SectionPlants,
   SectionComments,
-  SectionHelp,
-  SectionAmounts,
-  SectionSecret,
-  SectionMinerals
+  SectionMixing,
+  SectionSeo,
 } from "@/widgets/MainSections";
 import { getCurrentLocale } from "./i18n/utils";
 import { setLanguage } from "./i18n/hooks";
@@ -21,14 +21,14 @@ export default Vue.extend({
     MainHeader,
     MainFooter,
     SectionPreview,
-    SectionVideo,
-    SectionSliders,
-    SectionCards,
+    SectionMain,
+    SectionKey,
+    SectionCoaster,
+    SectionMinerals,
+    SectionPlants,
     SectionComments,
-    SectionHelp,
-    SectionAmounts,
-    SectionSecret,
-    SectionMinerals
+    SectionMixing,
+    SectionSeo,
   },
   mounted() {
     const currentLocale = getCurrentLocale();
@@ -42,15 +42,15 @@ export default Vue.extend({
     <MainHeader />
     <v-main>
       <SectionPreview />
-      <SectionHelp />
+      <SectionMain />
       <div class="app__wrapper">
-        <SectionVideo />
-        <SectionSliders />
+        <SectionKey />
+        <SectionCoaster />
         <SectionMinerals />
-        <SectionCards />
+        <SectionPlants />
         <SectionComments />
-        <SectionAmounts />
-        <SectionSecret />
+        <SectionMixing />
+        <SectionSeo />
       </div>
     </v-main>
     <MainFooter />

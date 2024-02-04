@@ -1,1 +1,0 @@
-export { SectionAmounts } from './ui';

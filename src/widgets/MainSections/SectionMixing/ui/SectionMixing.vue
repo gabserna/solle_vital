@@ -395,6 +395,12 @@ export default {
         width: toRem(184);
       }
     }
+
+    @media (max-width: em(365)) {
+      & img {
+        width: toRem(124);
+      }
+    }
   }
 }
 </style>

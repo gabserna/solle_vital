@@ -106,6 +106,10 @@ export default {
     max-width: toRem(724);
     margin: 0 auto;
 
+    @media (max-width: $pc) {
+      row-gap: toRem(24);
+    }
+
     @media (max-width: $tablet) {
       padding: 0;
     }
@@ -145,6 +149,10 @@ export default {
     font-size: toRem(22);
     line-height: 150%; /* 33/22 */
 
+    @media (max-width: $pc) {
+      font-size: toRem(20);
+    }
+
     @media (max-width: $mobile) {
       font-size: toRem(14);
     }
@@ -155,6 +163,12 @@ export default {
       & strong {
         display: block;
         font-size: toRem(20);
+      }
+    }
+
+    @media (max-width: $pc) {
+      & img {
+        width: toRem(142);
       }
     }
 

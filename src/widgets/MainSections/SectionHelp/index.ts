@@ -1,1 +1,0 @@
-export { SectionHelp } from './ui';

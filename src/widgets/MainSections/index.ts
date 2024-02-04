@@ -1,9 +1,9 @@
-export { SectionSliders } from './SectionSlider';
-export { SectionVideo } from './SectionVideo';
-export { SectionComments } from './SectionComments';
-export { SectionCards } from './SectionCards';
 export { SectionPreview } from './SectionPreview';
-export { SectionHelp } from './SectionHelp';
-export { SectionAmounts } from './SectionAmounts';
-export { SectionSecret } from './SectionSecret';
+export { SectionMain } from './SectionMain';
+export { SectionKey } from './SectionKey';
+export { SectionCoaster } from './SectionCoaster';
 export { SectionMinerals } from './SectionMinerals';
+export { SectionPlants } from './SectionPlants';
+export { SectionComments } from './SectionComments';
+export { SectionMixing } from './SectionMixing';
+export { SectionSeo } from './SectionSeo';

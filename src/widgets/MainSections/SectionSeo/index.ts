@@ -1,0 +1,1 @@
+export { SectionSeo } from './ui';
