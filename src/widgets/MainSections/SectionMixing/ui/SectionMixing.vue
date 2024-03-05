@@ -77,7 +77,7 @@ export default {
       <BaseContainer>
         <div class="video__content">
           <div class="video__header">
-            <h3>Mixing up your SolleVital</h3>
+            <h2>Mixing up your Solle<strong>Vital </strong> </h2>
             <div>
               <div class="player">
                 <vue-plyr>
@@ -106,6 +106,7 @@ export default {
                       <div class="card__image">
                         <BaseAnimation variant="opacity" :delay="200">
                           <img :src="card.img" :alt="card.title" />
+                          <p>random text here</p>
                         </BaseAnimation>
                       </div>
                       <div class="card__content">
