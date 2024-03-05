@@ -39,7 +39,7 @@ export default defineComponent ({
 </script>
 
 <template>
-  <v-container>
+  <!-- <v-container> -->
   <section class="health">
     <div class="health__wave">
       <img :src="Wave" alt="wave" />
@@ -118,7 +118,7 @@ export default defineComponent ({
       </BaseContainer>
     </div>
   </section>
-</v-container>
+<!-- </v-container> -->
 </template>
 
 <style lang="scss" scoped>

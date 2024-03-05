@@ -68,7 +68,7 @@ export default Vue.extend({
               <BaseAnimation :delay="1000">
                 <p>
                   To help combat this, we included four herbs rich in trace minerals in
-                  the SolleVital formula - burdock, avena sativa, dandelion and nettle.
+                  the Solle<strong>Vital</strong> formula - burdock, avena sativa, dandelion and nettle.
                 </p>
               </BaseAnimation>
             </div>
