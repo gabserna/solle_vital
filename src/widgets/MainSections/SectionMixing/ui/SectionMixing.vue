@@ -106,7 +106,6 @@ export default {
                       <div class="card__image">
                         <BaseAnimation variant="opacity" :delay="200">
                           <img :src="card.img" :alt="card.title" />
-                          <p>random text here</p>
                         </BaseAnimation>
                       </div>
                       <div class="card__content">

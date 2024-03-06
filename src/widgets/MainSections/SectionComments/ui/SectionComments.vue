@@ -1,10 +1,10 @@
 <script lang="ts">
-import Vue from "vue";
-import Swiper from "swiper";
-import { Navigation, Autoplay } from "swiper/modules";
-import { BaseContainer, BaseRating } from "@/shared/ui";
-import Background from "../images/Background.png";
-import { isMobile } from "@/shared/lib";
+import Vue from 'vue';
+import Swiper from 'swiper';
+import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+import { BaseContainer, BaseRating } from '@/shared/ui';
+import Background from '../images/Background.png';
+import { isMobile } from '@/shared/lib';
 
 interface IComment {
   text: string;
@@ -23,63 +23,54 @@ export default Vue.extend({
       Background,
       COMMENTS: [
         {
-          text:
-            "“I love drinking my green drink every morning! I immediately feel better when I’m done. Solle vital has replaced my daily vitamins!!”",
-          name: "Shannon M.",
-          status: "Verified Customer",
+          text: '“I love drinking my green drink every morning! I immediately feel better when I’m done. Solle vital has replaced my daily vitamins!!”',
+          name: 'Shannon M.',
+          status: 'Verified Customer',
         },
         {
-          text:
-            "“Balances my body, gives me energy, keeps me healthy and tastes so good! Can’t go a day without my Vital!!”",
-          name: "Jason S.",
-          status: "Verified Customer",
+          text: '“Balances my body, gives me energy, keeps me healthy and tastes so good! Can’t go a day without my Vital!!”',
+          name: 'Jason S.',
+          status: 'Verified Customer',
         },
         {
-          text:
-            "“I have felt a lot more energy since using Solle vital. I have also suffered from depression and anxiety and this product has helped me feel more clarity of mind.”",
-          name: "Brittney B.",
-          status: "Verified Customer",
+          text: '“I have felt a lot more energy since using Solle vital. I have also suffered from depression and anxiety and this product has helped me feel more clarity of mind.”',
+          name: 'Brittney B.',
+          status: 'Verified Customer',
         },
         {
-          text:
-            "“This drink has helped my son... immensely he can focus now, better mood and doesnt get in trouble at school as much”",
-          name: "Nikki Z.",
-          status: "Verified Customer",
+          text: '“This drink has helped my son... immensely he can focus now, better mood and doesnt get in trouble at school as much”',
+          name: 'Nikki Z.',
+          status: 'Verified Customer',
         },
         {
-          text:
-            "“Vital has helped with my overall wellbeing, my sinuses are better and my stress is less”",
-          name: "Alicia K.",
-          status: "Verified Customer",
+          text: '“Vital has helped with my overall wellbeing, my sinuses are better and my stress is less”',
+          name: 'Alicia K.',
+          status: 'Verified Customer',
         },
 
         {
-          text:
-            "“I feel so much better since I started Vital. I have more energy & my anxiety is less.”",
-          name: "Dawn K.",
-          status: "Verified Customer",
+          text: '“I feel so much better since I started Vital. I have more energy & my anxiety is less.”',
+          name: 'Dawn K.',
+          status: 'Verified Customer',
         },
         {
-          text:
-            "“Sollevital has been a life savor for me. I am a non Hopkins lymphoma cancer patient that recovered and sollevital has been so helpful in giving me the needed energy. Go Sollenaturals!”",
-          name: "Dolores V.",
-          status: "Verified Customer",
+          text: '“Sollevital has been a life savor for me. I am a non Hopkins lymphoma cancer patient that recovered and sollevital has been so helpful in giving me the needed energy. Go Sollenaturals!”',
+          name: 'Dolores V.',
+          status: 'Verified Customer',
         },
         {
-          text:
-            "“This is so a great product that gives me energy without (a crash) and it’s a great breakfast before my meetings”",
-          name: "Carmen V.",
-          status: "Verified Customer",
+          text: '“This is so a great product that gives me energy without (a crash) and it’s a great breakfast before my meetings”',
+          name: 'Carmen V.',
+          status: 'Verified Customer',
         },
         {
-          text:
-            "“Its an absolute start to my morning! Adding my other products to my arsenal has helped my mental health and boosted my immunity. I cant imagine starting my day without it”",
-          name: "Connie H.",
-          status: "Verified Customer",
+          text: '“Its an absolute start to my morning! Adding my other products to my arsenal has helped my mental health and boosted my immunity. I cant imagine starting my day without it”',
+          name: 'Connie H.',
+          status: 'Verified Customer',
         },
       ] as IComment[],
       swiperOptions: {
-        modules: [Navigation, Autoplay],
+        modules: [Navigation, Autoplay, Pagination],
         loop: true,
         speed: 1000,
         slidesPerView: 1,
@@ -89,9 +80,18 @@ export default Vue.extend({
           disableOnInteraction: true,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          renderBullet: function (index: number, className: string) {
+            return `<span class="${className}"></span>`;
+          },
+        },
+
         breakpoints: {
           767: {
             slidesPerView: 3,
@@ -110,12 +110,10 @@ export default Vue.extend({
   // },
 
   mounted() {
-  if (this.$refs.swiper) {
-    new Swiper(this.$refs.swiper as HTMLElement, this.swiperOptions);
-  }
-}
-
-
+    if (this.$refs.swiper) {
+      new Swiper(this.$refs.swiper as HTMLElement, this.swiperOptions);
+    }
+  },
 });
 </script>
 
@@ -131,7 +129,11 @@ export default Vue.extend({
         <div class="comments__content">
           <div class="comments__swiper swiper" ref="swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="(comment, index) in COMMENTS" :key="index">
+              <div
+                class="swiper-slide"
+                v-for="(comment, index) in COMMENTS"
+                :key="index"
+              >
                 <div class="comment" outlined>
                   <p class="comment__text">{{ comment.text }}</p>
                   <div class="comment__block">
@@ -140,6 +142,9 @@ export default Vue.extend({
                   </div>
                 </div>
               </div>
+
+              <div class="swiper-pagination" ref="pagination"></div>
+
             </div>
           </div>
           <button class="swiper-button-prev">
@@ -184,7 +189,7 @@ export default Vue.extend({
 </template>
 
 <style lang="scss" scoped>
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .comments {
   position: relative;
@@ -267,7 +272,7 @@ export default Vue.extend({
   height: toRem(303);
   overflow-y: auto;
   padding: toRem(24) toRem(48);
-  @include adaptiveValue("height", 303, 350, 1100, 767, 1);
+  @include adaptiveValue('height', 303, 350, 1100, 767, 1);
 
   @media (max-width: $tablet) {
     padding: toRem(24) toRem(14);
