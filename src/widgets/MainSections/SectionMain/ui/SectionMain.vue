@@ -144,6 +144,7 @@ export default defineComponent({
     position: relative;
     z-index: $zIndex_1;
     background-color: $white;
+    padding: 0 5rem;
   }
 
   &__content {
@@ -157,7 +158,7 @@ export default defineComponent({
       grid-template-columns: 1fr;
       justify-content: center;
       gap: toRem(12);
-      // max-width: toRem(610);    // to adjust width GS
+      // max-width: toRem(610);
       margin: 0 auto;
       text-align: center;
       margin: 0 20vh;
