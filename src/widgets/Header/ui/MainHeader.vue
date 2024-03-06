@@ -60,8 +60,9 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
+  // height: 50px;
   background-color: $white;
-  padding: toRem(5) 0;
+  padding: toRem(0) 0;
   box-shadow: $box_shadow;
   z-index: $zIndex_50;
 
