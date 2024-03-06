@@ -360,4 +360,26 @@ export default defineComponent({
     }
   }
 }
+
+
+@media (max-width: $xs) {
+  // less then 600px
+}
+
+@media (min-width: $sm) and (max-width: $md) {
+  // from 600px to 906px
+}
+
+@media (min-width: $md) and (max-width: $lg) {
+  // from 906px to 1264px
+}
+
+@media (min-width: $lg) and (max-width: $xl) {
+  // from 1264px to 1904px
+}
+
+@media (min-width: $xl) {
+  // greater than 1904px
+}
+
 </style>

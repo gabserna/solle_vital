@@ -43,8 +43,23 @@ $maxWidthContainer: 1448;
 $paddingContainer: var(--padding-сontainer);
 $paddingContainerMinus: var(--padding-сontainer-minus);
 
-// Брейк-поинты
-$pc: em(1199.98); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
-$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
-$mobile: em(767.98); // Телефоны L
-$mobileSmall: em(479.98); // Телефоны S
+// // Брейк-поинты
+// $pc: em(1199.98); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+// $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+// $mobile: em(767.98); // Телефоны L
+// $mobileSmall: em(479.98); // Телефоны S
+
+
+
+// Breakpoints
+$pc: em(1199.98); // Desktops, laptops, some tablets in landscape orientation
+$tablet: em(991.98); // Tablets, some phones in landscape orientation
+$mobile: em(767.98); // Phones L
+$mobileSmall: em(479.98); // Phones S
+
+$xs: 600px;
+$sm: 960px;
+$md: 1264px;
+$lg: 1904px;
+$xl: 1904px;
+
