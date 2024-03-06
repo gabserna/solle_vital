@@ -83,7 +83,7 @@ export default {
                 <vue-plyr>
                   <div
                     data-plyr-provider="youtube"
-                    data-plyr-embed-id="IzmCP9Yd6dc"
+                    data-plyr-embed-id="ptwi3cNsm58"
                   ></div>
                 </vue-plyr>
               </div>
