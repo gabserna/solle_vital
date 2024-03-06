@@ -17,7 +17,7 @@ export default defineComponent({
       Wave,
       VitalBox,
       isTablet,
-      isLoggedIn: true, // to verify if user is logged in  GS
+      isLoggedIn: false, // to verify if user is logged in  GS
     };
   },
   setup() {
