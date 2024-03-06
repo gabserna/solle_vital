@@ -105,9 +105,17 @@ export default Vue.extend({
       },
     };
   },
+  // mounted() {
+  //   new Swiper(this.$refs.swiper, this.swiperOptions);
+  // },
+
   mounted() {
-    new Swiper(this.$refs.swiper, this.swiperOptions);
-  },
+  if (this.$refs.swiper) {
+    new Swiper(this.$refs.swiper as HTMLElement, this.swiperOptions);
+  }
+}
+
+
 });
 </script>
 
