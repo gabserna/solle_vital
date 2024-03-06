@@ -52,14 +52,14 @@ $paddingContainerMinus: var(--padding-сontainer-minus);
 
 
 // Breakpoints
-$pc: em(1199.98); // Desktops, laptops, some tablets in landscape orientation
-$tablet: em(991.98); // Tablets, some phones in landscape orientation
-$mobile: em(767.98); // Phones L
 $mobileSmall: em(479.98); // Phones S
+$mobile: em(767.98); // Phones L
+$tablet: em(991.98); // Tablets, some phones in landscape orientation
+$pc: em(1199.98); // Desktops, laptops, some tablets in landscape orientation
 
-$xs: 600px;
-$sm: 960px;
-$md: 1264px;
-$lg: 1904px;
-$xl: 1904px;
+$xs: em(600);
+$sm: em(960);
+$md: em(1264);
+$lg: em(1904);
+$xl: em(1904);
 
