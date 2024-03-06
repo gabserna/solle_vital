@@ -1,11 +1,14 @@
 <script lang="ts">
+import { defineComponent } from "vue";   //defineComponent to verify isLoggedIn GS
 import { BaseContainer, BaseAnimation, BaseButton } from "@/shared/ui";
 import Wave from "../images/wave.png";
+// import Wave2 from "../images/wave2.svg";
+
 import VitalBox from "../images/vital-box.png";
 import { isTablet } from "@/shared/lib";
 import { ref } from "vue";
 
-export default {
+export default defineComponent ({
   components: {
     BaseContainer,
     BaseAnimation,
@@ -16,6 +19,7 @@ export default {
       Wave,
       VitalBox,
       isTablet,
+      isLoggedIn: false, // to verify if user is logged in  GS
     };
   },
   setup() {
@@ -31,10 +35,11 @@ export default {
       decrementCount,
     };
   },
-};
+});
 </script>
 
 <template>
+  <!-- <v-container> -->
   <section class="health">
     <div class="health__wave">
       <img :src="Wave" alt="wave" />
@@ -62,14 +67,17 @@ export default {
                   mood.
                 </p>
               </BaseAnimation>
+
             </div>
             <BaseAnimation :delay="700" v-if="isTablet">
               <div class="health__img">
                 <img :src="VitalBox" alt="VitalBox" />
               </div>
             </BaseAnimation>
+
             <BaseAnimation :delay="800">
-              <div class="qty">
+              <!-- .qty should appears only when logged in -->
+              <div class="qty" v-if="isLoggedIn"> 
                 <div class="qty__wrap">
                   <p class="qty__title"><strong>Qty</strong> (sticks)</p>
                   <div class="qty__price">
@@ -88,14 +96,18 @@ export default {
                     <button @click="incrementCount" type="button">+</button>
                   </div>
                 </div>
+              </div>
+            </BaseAnimation>
+
+            <BaseAnimation :delay="800">
                 <div class="qty__discover">
                   <p>
                     Discover your custom product recommendations when you take our quiz!
                   </p>
                   <a href="https://www.sollenaturals.com/take-our-quiz">Take the Quiz</a>
                 </div>
-              </div>
-            </BaseAnimation>
+              </BaseAnimation>
+
           </div>
           <BaseAnimation variant="opacity" :delay="400" v-if="!isTablet">
             <div class="health__img">
@@ -106,6 +118,7 @@ export default {
       </BaseContainer>
     </div>
   </section>
+<!-- </v-container> -->
 </template>
 
 <style lang="scss" scoped>
@@ -117,6 +130,7 @@ export default {
   @media (max-width: $mobile) {
     padding-top: 0;
   }
+  
 
   &__wave {
     & img {
@@ -144,9 +158,10 @@ export default {
       grid-template-columns: 1fr;
       justify-content: center;
       gap: toRem(12);
-      max-width: toRem(610);
+      // max-width: toRem(610);    // to adjust width GS
       margin: 0 auto;
       text-align: center;
+      margin: 0 20vh;
     }
   }
 

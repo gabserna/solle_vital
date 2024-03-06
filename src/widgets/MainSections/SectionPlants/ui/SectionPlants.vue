@@ -58,6 +58,8 @@ export default defineComponent({
             </div>
             <div class="greens">
               <div class="greens__block">
+                
+                <!-- This title is wrong and needs to be fixed on the page -->
                 <p class="greens__title">4 sources of chlorophyll</p>
                 <ul class="greens__list">
                   <li><strong>Mulberry</strong> Fruit Extract</li>

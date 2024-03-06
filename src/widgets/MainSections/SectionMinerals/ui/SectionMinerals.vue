@@ -33,7 +33,8 @@ export default Vue.extend({
         <div class="coaster__content">
           <div class="coaster__header">
             <BaseAnimation :delay="200">
-              <h2>Step off the stress roller coaster</h2>
+              <h2>Why include trace minerals?</h2>
+              <!-- <h2>Step off the stress roller coaster</h2> -->
             </BaseAnimation>
           </div>
           <div class="coaster__body">
@@ -67,7 +68,7 @@ export default Vue.extend({
               <BaseAnimation :delay="1000">
                 <p>
                   To help combat this, we included four herbs rich in trace minerals in
-                  the SolleVital formula - burdock, avena sativa, dandelion and nettle.
+                  the Solle<strong>Vital</strong> formula - burdock, avena sativa, dandelion and nettle.
                 </p>
               </BaseAnimation>
             </div>
