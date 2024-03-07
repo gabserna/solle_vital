@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue'; //defineComponent to verify isLoggedIn GS
+import { defineComponent } from 'vue'; //defineComponent to verify isLoggedIn
 import { BaseContainer, BaseAnimation, BaseButton } from '@/shared/ui';
 import Wave from '../images/wave.png';
 import VitalBox from '../images/vital-box.png';
@@ -17,7 +17,7 @@ export default defineComponent({
       Wave,
       VitalBox,
       isTablet,
-      isLoggedIn: false, // to verify if user is logged in  GS
+      isLoggedIn: false, // to verify if user is logged in
     };
   },
   setup() {
