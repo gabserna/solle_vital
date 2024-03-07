@@ -1,11 +1,11 @@
 <script lang="ts">
-import Vue from "vue";
-import { BaseContainer, BaseAnimation } from "@/shared/ui";
-import { isMobile } from "@/shared/lib";
+import Vue from 'vue';
+import { BaseContainer, BaseAnimation } from '@/shared/ui';
+import { isMobile } from '@/shared/lib';
 
-import Wave from "../images/wave.png";
-import BottomWave from "../images/wave-bottom.png";
-import Broccoli from "../images/broccoli.png";
+import Wave from '../images/wave.png';
+import BottomWave from '../images/wave-bottom.png';
+import Broccoli from '../images/broccoli.png';
 
 export default Vue.extend({
   components: {
@@ -43,32 +43,34 @@ export default Vue.extend({
                 <p>
                   Trace minerals are the definition of small but mighty.
                   <strong>
-                    Almost all bodily process require trace minerals in order to function,
-                    yet we cannot produce them on our own.
+                    Almost all bodily process require trace minerals in order to
+                    function, yet we cannot produce them on our own.
                   </strong>
-                  If the body does not get enough of these critical nutrients, there is an
-                  increased risk of health issues including high blood pressure, pain,
-                  depression, poor digestion and more.
+                  If the body does not get enough of these critical nutrients,
+                  there is an increased risk of health issues including high
+                  blood pressure, pain, depression, poor digestion and more.
                 </p>
               </BaseAnimation>
               <BaseAnimation :delay="600">
                 <p>
-                  So where do these minerals come from? The soil that our food is grown
-                  in! The problem with this is that most soil is not what it used to be,
-                  leading to significant mineral depletion in our food.
+                  So where do these minerals come from? The soil that our food
+                  is grown in! The problem with this is that most soil is not
+                  what it used to be, leading to significant mineral depletion
+                  in our food.
                 </p>
               </BaseAnimation>
               <BaseAnimation :delay="800">
                 <p>
-                  To the right you’ll find an example of this, courtesy of a study
-                  conducted by the Kushi Institute that compares the mineral concentration
-                  in broccoli in 1975 and now.
+                  To the right you’ll find an example of this, courtesy of a
+                  study conducted by the Kushi Institute that compares the
+                  mineral concentration in broccoli in 1975 and now.
                 </p>
               </BaseAnimation>
               <BaseAnimation :delay="1000">
                 <p>
-                  To help combat this, we included four herbs rich in trace minerals in
-                  the Solle<strong>Vital</strong> formula - burdock, avena sativa, dandelion and nettle.
+                  To help combat this, we included four herbs rich in trace
+                  minerals in the Solle<strong>Vital</strong> formula - burdock,
+                  avena sativa, dandelion and nettle.
                 </p>
               </BaseAnimation>
             </div>
@@ -93,11 +95,21 @@ export default Vue.extend({
 </template>
 
 <style lang="scss" scoped>
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .coaster {
   position: relative;
   overflow: hidden;
+
+  @media (max-width: $xs) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: toRem(14);
+    }
+  }
 
   &__image {
     & img {
@@ -151,7 +163,7 @@ export default Vue.extend({
 
     @media (max-width: $mobile) {
       text-align: center;
-      font-size: toRem(12);
+      font-size: toRem(14);
     }
   }
 

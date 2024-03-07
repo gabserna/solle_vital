@@ -134,6 +134,7 @@ export default defineComponent({
 @import "src/app/assets/styles/variables.scss";
 
 .preview {
+  padding: 0;
   position: relative;
 
   &__image {

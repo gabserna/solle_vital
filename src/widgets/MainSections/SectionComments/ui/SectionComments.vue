@@ -204,25 +204,41 @@ export default Vue.extend({
     @media (max-width: $mobile) {
       padding: toRem(45) 0;
     }
+
+    @media (max-width: $xs) {
+    // padding-bottom: toRem(150);
+
+    h2 {
+      font-size: 2rem;
+      margin: 0 auto;
+      width: 70%;
+      text-align: center;
+    }
+    p {
+      font-size: toRem(14);
+    }
+   
+  }
   }
 
   &__header {
     position: relative;
     text-align: center;
     z-index: $zIndex_1;
-
+    
     @media (max-width: $mobile) {
       max-width: toRem(472);
       margin: 0 auto;
     }
   }
-
+  
   &__content {
     position: relative;
     margin-top: toRem(80);
-
+    
     @media (max-width: $tablet) {
-      margin-top: toRem(30);
+      margin: toRem(30);
+      font-size: 2rem;
     }
   }
 
@@ -267,7 +283,7 @@ export default Vue.extend({
   text-align: center;
   row-gap: toRem(15);
   background-color: $white;
-  border-radius: toRem(30) toRem(30) toRem(30) 0;
+  border-radius: toRem(15) toRem(15) toRem(15) 0;
   box-shadow: 2px 4px 4px 0px #bcbab180;
   height: toRem(303);
   overflow-y: auto;
@@ -278,8 +294,8 @@ export default Vue.extend({
     padding: toRem(24) toRem(14);
   }
 
-  @media (max-width: $mobile) {
-    height: toRem(170);
+  @media (max-width: $xs) {
+    height: toRem(200);
     max-width: toRem(400);
     margin: 0 auto;
   }

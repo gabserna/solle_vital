@@ -75,6 +75,11 @@ export default Vue.extend({
     @media (max-width: $mobile) {
       row-gap: toRem(38);
     }
+    @media (max-width: $xs) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
   }
 
   &__header {
@@ -89,7 +94,7 @@ export default Vue.extend({
       row-gap: toRem(18);
 
       & p {
-        font-size: toRem(12);
+        font-size: toRem(14);
       }
     }
   }

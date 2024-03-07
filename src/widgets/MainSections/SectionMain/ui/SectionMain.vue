@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue'; //defineComponent to verify isLoggedIn
 import { BaseContainer, BaseAnimation, BaseButton } from '@/shared/ui';
 import Wave from '../images/wave.png';
-import VitalBox from '../images/vital-box.png';
+import VitalBox from '../images/vital-box2.png';
 import { isTablet } from '@/shared/lib';
 import { ref } from 'vue';
 
@@ -99,7 +99,7 @@ export default defineComponent({
             </BaseAnimation>
 
             <BaseAnimation :delay="800">
-              <div class="qty__discover">
+              <div class="qty__discover" v-if="isLoggedIn">
                 <p>
                   Discover your custom product recommendations when you take our
                   quiz!
@@ -128,6 +128,14 @@ export default defineComponent({
   padding-top: 0;
 
   @media (max-width: $xs) {
+
+    h2 {
+      text-align: start;
+      font-size: 2rem;
+    }
+    p {
+        font-size: toRem(14);
+      }
   }
 
   &__wave {
@@ -146,7 +154,7 @@ export default defineComponent({
     padding: 0 5rem;
 
     @media (max-width: $xs) {
-      padding: 0;
+      padding: 2rem 0 0 0;
     }
   }
 
@@ -210,6 +218,18 @@ export default defineComponent({
       aspect-ratio: 610 / 532;
       object-fit: contain;
       object-position: center;
+
+
+      @media (max-width: $xs) {
+      // top: -2rem;
+      z-index: -2;
+      object-position:top;
+      max-width: toRem(500);
+      // width: 90%;
+   
+      aspect-ratio: 580 / 532;
+    }
+
     }
   }
 }
@@ -300,6 +320,13 @@ export default defineComponent({
   &__box {
     @include flexRow(center);
     column-gap: toRem(12);
+
+    @media (max-width: $xs) {
+      padding: 0;
+      margin: 0;
+      column-gap: toRem(0);
+    }
+
   }
 
   &__button {

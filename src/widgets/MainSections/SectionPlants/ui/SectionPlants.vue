@@ -85,9 +85,18 @@ export default defineComponent({
 .chlorophyll {
   overflow-x: hidden;
 
-  @media (max-width: $mobile) {
+  @media (max-width: $xs) {
     overflow: hidden;
     padding-bottom: toRem(150);
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: toRem(14);
+    }
+    .greens__title {
+      font-size: 1.8rem;
+    }
   }
 
   &__content {
@@ -102,7 +111,7 @@ export default defineComponent({
   &__header {
     position: relative;
     @include flexColumn();
-    row-gap: toRem(5);
+    row-gap: toRem(0);
     text-align: center;
     z-index: $zIndex_1;
 
@@ -194,8 +203,9 @@ export default defineComponent({
         padding-right: toRem(6);
       }
 
-      @media (max-width: $mobile) {
-        font-size: toRem(14);
+      @media (max-width: $xs) {
+        font-size: 0.8rem;
+        padding-left: 0.5rem;
       }
     }
   }
@@ -248,8 +258,8 @@ export default defineComponent({
         font-size: toRem(24);
       }
 
-      @media (max-width: $mobile) {
-        font-size: toRem(12);
+      @media (max-width: $xs) {
+        font-size: toRem(14);
 
         & strong {
           font-size: toRem(16);
