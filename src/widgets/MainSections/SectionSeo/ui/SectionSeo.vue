@@ -77,6 +77,13 @@ export default {
       height: auto;
       margin: 0 auto;
     }
+
+      @media (max-width: $xs) {
+      padding: 0;
+      margin: 0;
+      width: 80%;
+      height: auto;
+    }
   }
   
   &__product {
@@ -118,9 +125,11 @@ export default {
     
     @media (max-width: $tablet) {
       padding: 0;
-    }
-    
-    @media (max-width: $mobile) {
+    } 
+    @media (max-width: $xs) {
+      width: 100%;
+      margin: 0;
+      left: -2rem;
       row-gap: toRem(18);
     }
   }

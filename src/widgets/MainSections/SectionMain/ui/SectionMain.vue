@@ -37,88 +37,85 @@ export default defineComponent({
 </script>
 
 <template>
-
-      <section class="health">
-        <div class="health__wave">
-          <img :src="Wave" alt="wave" />
-        </div>
-        <div class="health__wrapper">
-          <BaseContainer>
-            <div class="health__content">
-              <div class="health__box">
-                <BaseAnimation :delay="200">
-                  <h2>Vital for your health!</h2>
-                </BaseAnimation>
-                <div class="health__subtitle">
-                  <BaseAnimation :delay="400">
-                    <p>
-                      Solle<b>Vital®</b> is a premium plant blend consisting of
-                      three balanced ingredient groups:
-                      <b>adaptogens, trace minerals,</b> and our chlorophyll
-                      blend.
-                    </p>
-                  </BaseAnimation>
-                  <BaseAnimation :delay="600">
-                    <p>
-                      These blends work together to provide essential nutrients
-                      that strengthen core body systems such as the circulatory,
-                      digestive, respiratory and immune systems, promote
-                      recovery, and lift energy and mood.
-                    </p>
-                  </BaseAnimation>
-                </div>
-                <BaseAnimation :delay="700" v-if="isTablet">
-                  <div class="health__img">
-                    <img :src="VitalBox" alt="VitalBox" />
-                  </div>
-                </BaseAnimation>
-
-                <BaseAnimation :delay="800">
-                  <!-- .qty should appears only when logged in -->
-                  <div class="qty" v-if="isLoggedIn">
-                    <div class="qty__wrap">
-                      <p class="qty__title"><strong>Qty</strong> (sticks)</p>
-                      <div class="qty__price">
-                        <div class="qty__switcher">
-                          <button class="active" type="button">30</button>
-                          <button type="button">100</button>
-                        </div>
-                        <p class="qty__value"><b>$47.25</b> USD</p>
-                      </div>
-                    </div>
-                    <div class="qty__box">
-                      <BaseButton class="qty__button">Add to cart</BaseButton>
-                      <div class="qty__counter">
-                        <button @click="decrementCount" type="button">-</button>
-                        <span>{{ count }}</span>
-                        <button @click="incrementCount" type="button">+</button>
-                      </div>
-                    </div>
-                  </div>
-                </BaseAnimation>
-
-                <BaseAnimation :delay="800">
-                  <div class="qty__discover">
-                    <p>
-                      Discover your custom product recommendations when you take
-                      our quiz!
-                    </p>
-                    <a href="https://www.sollenaturals.com/take-our-quiz"
-                      >Take the Quiz</a
-                    >
-                  </div>
-                </BaseAnimation>
-              </div>
-              <BaseAnimation variant="opacity" :delay="400" v-if="!isTablet">
-                <div class="health__img">
-                  <img :src="VitalBox" alt="VitalBox" />
-                </div>
+  <section class="health">
+    <div class="health__wave">
+      <img :src="Wave" alt="wave" />
+    </div>
+    <div class="health__wrapper">
+      <BaseContainer>
+        <div class="health__content">
+          <div class="health__box">
+            <BaseAnimation :delay="200">
+              <h2>Vital for your health!</h2>
+            </BaseAnimation>
+            <div class="health__subtitle">
+              <BaseAnimation :delay="400">
+                <p>
+                  Solle<b>Vital®</b> is a premium plant blend consisting of
+                  three balanced ingredient groups:
+                  <b>adaptogens, trace minerals,</b> and our chlorophyll blend.
+                </p>
+              </BaseAnimation>
+              <BaseAnimation :delay="600">
+                <p>
+                  These blends work together to provide essential nutrients that
+                  strengthen core body systems such as the circulatory,
+                  digestive, respiratory and immune systems, promote recovery,
+                  and lift energy and mood.
+                </p>
               </BaseAnimation>
             </div>
-          </BaseContainer>
-        </div>
-      </section>
+            <BaseAnimation :delay="700" v-if="isTablet">
+              <div class="health__img">
+                <img :src="VitalBox" alt="VitalBox" />
+              </div>
+            </BaseAnimation>
 
+            <BaseAnimation :delay="800">
+              <!-- .qty should appears only when logged in -->
+              <div class="qty" v-if="isLoggedIn">
+                <div class="qty__wrap">
+                  <p class="qty__title"><strong>Qty</strong> (sticks)</p>
+                  <div class="qty__price">
+                    <div class="qty__switcher">
+                      <button class="active" type="button">30</button>
+                      <button type="button">100</button>
+                    </div>
+                    <p class="qty__value"><b>$47.25</b> USD</p>
+                  </div>
+                </div>
+                <div class="qty__box">
+                  <BaseButton class="qty__button">Add to cart</BaseButton>
+                  <div class="qty__counter">
+                    <button @click="decrementCount" type="button">-</button>
+                    <span>{{ count }}</span>
+                    <button @click="incrementCount" type="button">+</button>
+                  </div>
+                </div>
+              </div>
+            </BaseAnimation>
+
+            <BaseAnimation :delay="800">
+              <div class="qty__discover">
+                <p>
+                  Discover your custom product recommendations when you take our
+                  quiz!
+                </p>
+                <a href="https://www.sollenaturals.com/take-our-quiz"
+                  >Take the Quiz</a
+                >
+              </div>
+            </BaseAnimation>
+          </div>
+          <BaseAnimation variant="opacity" :delay="400" v-if="!isTablet">
+            <div class="health__img">
+              <img :src="VitalBox" alt="VitalBox" />
+            </div>
+          </BaseAnimation>
+        </div>
+      </BaseContainer>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -127,10 +124,9 @@ export default defineComponent({
   position: relative;
   padding-top: 0;
 
-  @media (max-width: $mobile) {
-    padding-top: 0;
+  @media (max-width: $xs) {
   }
-
+  
   &__wave {
     & img {
       width: 100%;
@@ -139,12 +135,16 @@ export default defineComponent({
       object-position: top center;
     }
   }
-
+  
   &__wrapper {
     position: relative;
     z-index: $zIndex_1;
     background-color: $white;
     padding: 0 5rem;
+    
+    @media (max-width: $xs) {
+      padding: 0;
+    }
   }
 
   &__content {
@@ -154,14 +154,20 @@ export default defineComponent({
     justify-content: space-between;
     gap: toRem(35);
 
-    @media (max-width: $tablet) {
+    @media (max-width: $sm) {
       grid-template-columns: 1fr;
       justify-content: center;
       gap: toRem(12);
-      // max-width: toRem(610);
+      max-width: toRem(610);
       margin: 0 auto;
       text-align: center;
       margin: 0 20vh;
+    }
+
+    @media (max-width: $xs) {
+      padding: 0;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -361,7 +367,6 @@ export default defineComponent({
   }
 }
 
-
 @media (max-width: $xs) {
   // less then 600px
 }
@@ -381,5 +386,4 @@ export default defineComponent({
 @media (min-width: $xl) {
   // greater than 1904px
 }
-
 </style>
