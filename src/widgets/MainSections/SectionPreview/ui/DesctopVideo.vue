@@ -2,8 +2,8 @@
   <video
     crossorigin="true"
     playsinline
-    poster="../video/poster.png"
-    src="../video/preview-small.mp4"
+    poster="../video/poster2.png"
+    src="../video/vital-header.mp4"
     muted
     loop
     autoplay
