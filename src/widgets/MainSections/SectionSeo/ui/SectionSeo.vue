@@ -58,6 +58,8 @@ export default {
 
 .seo {
   
+  padding-bottom: 1rem;
+
   @media (max-width: $tablet) {
     padding-top: 0;
   }
@@ -111,12 +113,12 @@ export default {
   &__content {
     position: relative;
     @include flexColumn(center, center);
-    row-gap: toRem(40);
+    row-gap: toRem(10);
     height: 100%;
     padding: toRem(102) toRem(83) toRem(38);
     z-index: $zIndex_1;
     max-width: toRem(724);
-    transform: translate(15%, 0);
+    transform: translate(0, 0);
     margin: 0 auto;
     
     @media (max-width: $pc) {
@@ -174,6 +176,8 @@ export default {
   }
   
   &__info {
+
+
     & p {
       & strong {
         display: block;

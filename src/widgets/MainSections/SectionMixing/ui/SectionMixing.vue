@@ -22,10 +22,10 @@ export default {
           img: Card_1,
           title: "Hot citrus sweet tea",
           subtitle:
-            "A satisfying hot drink with a citrus kick. Combines both Solle<b>Vital</b> and Solle<b>Excell</b>!",
+            "A satisfying hot drink with a citrus kick. Combines both Solle<strong>Vital</strong> and Solle<strong>Excell</strong>!",
           ingredients: [
-            "1 packet Solle<b>Vital</b>",
-            "1 packet Solle<b>Excell</b>",
+            "1 packet Solle<strong>Vital</strong>",
+            "1 packet Solle<strong>Excell</strong>",
             "Juice of half a large lemon",
             "12-16 oz hot water",
           ],
@@ -40,7 +40,7 @@ export default {
           subtitle:
             "A delicious, nutrition-packed green smoothie with the power of adaptogens.",
           ingredients: [
-            "1 pkt Solle<b>Vital</b>",
+            "1 pkt Solle<strong>Vital</strong>",
             "1 c spinach",
             "1/2 c Greek yogurt (vanilla, plain, or honey is best)",
             "1 handful mixed frozen berries",
@@ -57,8 +57,7 @@ export default {
           subtitle:
             "A Solle twist on a mojito, this refreshing drink will both quench your thirst & leave you energized!",
           ingredients: [
-            "1 pkt Solle<b>Vital</b>",
-            "1 c spinach",
+            "1 pkt Solle<strong>Vital</strong>",
             "Juice of half a fresh lime (or lemon)",
             "1 mint leaf",
             "Ice",
@@ -96,7 +95,7 @@ export default {
                     <p class="directions__subtitle">
                       Add the contents of one packet to 16-18 oz. of cool water. Use once
                       daily, usually in the morning or afternoon, for best results.
-                      SolleVital tastes the best if served ice cold!
+                      Solle<strong>Vital</strong> tastes the best if served ice cold!
                     </p>
                   </BaseAnimation>
                 </div>
@@ -168,6 +167,7 @@ export default {
 <style lang="scss" scoped>
 @import "src/app/assets/styles/variables.scss";
 .video {
+
   overflow: hidden;
   &__header {
     text-align: center;
@@ -221,7 +221,7 @@ export default {
   position: relative;
   max-width: toRem(1034);
   margin: 0 auto;
-  border-radius: toRem(8);
+  border-radius: toRem(20);
   overflow: hidden;
   margin-top: toRem(80);
   aspect-ratio: 1034 / 539;

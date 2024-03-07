@@ -123,7 +123,7 @@ export default Vue.extend({
       <BaseContainer>
         <v-row no-gutters class="comments__header">
           <v-col>
-            <h3>What people are saying about SolleVital</h3>
+            <h2>What people are saying</h2>
           </v-col>
         </v-row>
         <div class="comments__content">

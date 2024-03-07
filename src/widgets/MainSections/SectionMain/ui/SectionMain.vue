@@ -51,9 +51,12 @@ export default defineComponent({
             <div class="health__subtitle">
               <BaseAnimation :delay="400">
                 <p>
-                  Solle<b>Vital®</b> is a premium plant blend consisting of
+                  Solle<strong>Vital®</strong> is a premium plant blend consisting of
                   three balanced ingredient groups:
-                  <b>adaptogens, trace minerals,</b> and our chlorophyll blend.
+                  <strong
+                    >adaptogens, trace minerals, and our chlorophyll
+                    blend.</strong
+                  >
                 </p>
               </BaseAnimation>
               <BaseAnimation :delay="600">
@@ -126,7 +129,7 @@ export default defineComponent({
 
   @media (max-width: $xs) {
   }
-  
+
   &__wave {
     & img {
       width: 100%;
@@ -135,13 +138,13 @@ export default defineComponent({
       object-position: top center;
     }
   }
-  
+
   &__wrapper {
     position: relative;
     z-index: $zIndex_1;
     background-color: $white;
     padding: 0 5rem;
-    
+
     @media (max-width: $xs) {
       padding: 0;
     }
