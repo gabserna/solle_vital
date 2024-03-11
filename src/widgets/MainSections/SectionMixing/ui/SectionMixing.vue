@@ -277,8 +277,9 @@ export default {
       row-gap: toRem(4);
     }
 
+    
   }
-
+  
   &__title {
     font-size: toRem(24);
     font-weight: 500;
@@ -287,12 +288,15 @@ export default {
       font-size: toRem(16);
     }
   }
-
+  
   &__subtitle {
     @media (max-width: $mobile) {
       font-size: toRem(14);
       line-height: 150%;
     }
+      @media (max-width: $xs) {
+        max-width: toRem(400);
+      }
   }
 
   &__list {

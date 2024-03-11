@@ -148,26 +148,24 @@ export default defineComponent({
     margin-right: toRem(20);
   }
 
-  @media (max-width: $mobile) {
+  @media (max-width: $xs) {
     padding-right: 0;
     margin-right: 0;
     border-right: none;
     row-gap: toRem(21);
   }
-
+  
   &__wrap {
     position: relative;
   }
-
+  
   &__image {
     position: absolute;
     top: -23%;
-
-    @include adaptiveValue("left", -70, -384, 1444, 767, 1);
-
-    @media (max-width: $mobile) {
+    @include adaptiveValue("left", -150, -384, 1444, 767, 1);
+    
+    @media (max-width: $xs) {
       @include adaptiveValue("left", -50, -180, 500, 375, 1);
-
       & img {
         width: toRem(449);
       }

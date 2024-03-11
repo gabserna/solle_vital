@@ -66,10 +66,10 @@ export default {
   
   &__wrap {
     position: relative;
-    max-width: toRem(1300);
+    max-width: toRem(1200);
     width: 100%;
     text-align: center;
-    margin-left: auto;
+    margin: 0 auto;
     transform: translate(10%, 0);
     
     @include adaptiveValue("height", 596, 496, 1300, 991, 1);
@@ -131,7 +131,7 @@ export default {
     @media (max-width: $xs) {
       width: 100%;
       margin: 0;
-      left: -2rem;
+      left: 1rem;
       row-gap: toRem(18);
     }
   }
