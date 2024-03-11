@@ -173,8 +173,10 @@ export default Vue.extend({
       aspect-ratio: 591 / 421;
     }
 
-    @media (max-width: $mobile) {
-      transform: translateX(10%);
+    @media (max-width: $xs) {
+      width: toRem(500);
+      aspect-ratio: 591 / 421;
+      transform: translateX(0%);
     }
   }
 }

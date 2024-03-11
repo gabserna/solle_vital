@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue'; //defineComponent to verify isLoggedIn
 import { BaseContainer, BaseAnimation, BaseButton } from '@/shared/ui';
 import Wave from '../images/wave.png';
-import VitalBox from '../images/vital-box2.png';
+import VitalBox from '../images/vital-box3.png';
 import { isTablet } from '@/shared/lib';
 import { ref } from 'vue';
 
@@ -154,7 +154,7 @@ export default defineComponent({
     padding: 0 5rem;
 
     @media (max-width: $xs) {
-      padding: 2rem 0 0 0;
+      padding: 1rem 0 0 0;
     }
   }
 
@@ -187,7 +187,7 @@ export default defineComponent({
     row-gap: toRem(24);
 
     @media (max-width: $mobile) {
-      row-gap: toRem(12);
+      row-gap: toRem(8);
     }
   }
 
@@ -197,9 +197,9 @@ export default defineComponent({
     line-height: 168.75%; /* 27/16 */
 
     @media (max-width: $mobile) {
-      row-gap: toRem(12);
+      row-gap: toRem(10);
     }
-    @media (max-width: $mobileSmall) {
+    @media (max-width: $xs) {
       text-align: left;
     }
   }
@@ -214,19 +214,17 @@ export default defineComponent({
     & img {
       max-width: toRem(610);
       width: 100%;
-      height: auto;
+      height: 80%;
       aspect-ratio: 610 / 532;
       object-fit: contain;
       object-position: center;
 
 
       @media (max-width: $xs) {
-      // top: -2rem;
       z-index: -2;
       object-position:top;
       max-width: toRem(500);
-      // width: 90%;
-   
+      height: toRem(260);
       aspect-ratio: 580 / 532;
     }
 

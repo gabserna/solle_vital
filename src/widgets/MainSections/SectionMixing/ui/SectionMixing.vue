@@ -1,12 +1,12 @@
 <script lang="ts">
-import { BaseContainer, BaseAnimation } from "@/shared/ui";
+import { BaseContainer, BaseAnimation } from '@/shared/ui';
 
-import Wave from "../images/wave.png";
-import BottomWave from "../images/wave-bottom.png";
+import Wave from '../images/wave.png';
+import BottomWave from '../images/wave-bottom.png';
 
-import Card_1 from "../images/recipe1.png";
-import Card_2 from "../images/recipe2.png";
-import Card_3 from "../images/recipe3.png";
+import Card_1 from '../images/recipe1.png';
+import Card_2 from '../images/recipe2.png';
+import Card_3 from '../images/recipe3.png';
 
 export default {
   components: {
@@ -20,49 +20,50 @@ export default {
       cards: [
         {
           img: Card_1,
-          title: "Hot citrus sweet tea",
+          title: 'Hot citrus sweet tea',
           subtitle:
-            "A satisfying hot drink with a citrus kick. Combines both Solle<strong>Vital</strong> and Solle<strong>Excell</strong>!",
+            'A satisfying hot drink with a citrus kick. Combines both Solle<strong>Vital</strong> and Solle<strong>Excell</strong>!',
           ingredients: [
-            "1 packet Solle<strong>Vital</strong>",
-            "1 packet Solle<strong>Excell</strong>",
-            "Juice of half a large lemon",
-            "12-16 oz hot water",
+            '1 packet Solle<strong>Vital</strong>',
+            '1 packet Solle<strong>Excell</strong>',
+            'Juice of half a large lemon',
+            '12-16 oz hot water',
           ],
           directions:
-            "Heat water to a safe temperature and pour over powder. Squeeze lemon and stir well.",
+            'Heat water to a safe temperature and pour over powder. Squeeze lemon and stir well.',
           variation:
-            "If you’re not feeling a hot drink, this blend is also delicious mixed cold with ice! It’s wonderful for stamina, hydration, and improved sinus and circulatory clarity on active days.",
+            'If you’re not feeling a hot drink, this blend is also delicious mixed cold with ice! It’s wonderful for stamina, hydration, and improved sinus and circulatory clarity on active days.',
         },
         {
           img: Card_2,
-          title: "Green banana berry smoothie",
+          title: 'Green banana berry smoothie',
           subtitle:
-            "A delicious, nutrition-packed green smoothie with the power of adaptogens.",
+            'A delicious, nutrition-packed green smoothie with the power of adaptogens.',
           ingredients: [
-            "1 pkt Solle<strong>Vital</strong>",
-            "1 c spinach",
-            "1/2 c Greek yogurt (vanilla, plain, or honey is best)",
-            "1 handful mixed frozen berries",
-            "1/2 banana frozen",
-            "6 oz almond milk (or your milk of choice",
-            "2-4 ice cubes ",
+            '1 pkt Solle<strong>Vital</strong>',
+            '1 c spinach',
+            '1/2 c Greek yogurt (vanilla, plain, or honey is best)',
+            '1 handful mixed frozen berries',
+            '1/2 banana frozen',
+            '6 oz almond milk (or your milk of choice',
+            '2-4 ice cubes ',
           ],
           directions:
-            "Place all ingredients in a blender. Blend until creamy and frothy, about 30 seconds. Serve immediately.",
+            'Place all ingredients in a blender. Blend until creamy and frothy, about 30 seconds. Serve immediately.',
         },
         {
           img: Card_3,
-          title: "Vital refresher",
+          title: 'Vital refresher',
           subtitle:
-            "A Solle twist on a mojito, this refreshing drink will both quench your thirst & leave you energized!",
+            'A Solle twist on a mojito, this refreshing drink will both quench your thirst & leave you energized!',
           ingredients: [
-            "1 pkt Solle<strong>Vital</strong>",
-            "Juice of half a fresh lime (or lemon)",
-            "1 mint leaf",
-            "Ice",
+            '1 pkt Solle<strong>Vital</strong>',
+            'Juice of half a fresh lime (or lemon)',
+            '1 mint leaf',
+            'Ice',
           ],
-          directions: "Stir until mixed well. Make sure to add plenty of ice. Enjoy.",
+          directions:
+            'Stir until mixed well. Make sure to add plenty of ice. Enjoy.',
         },
       ],
     };
@@ -76,16 +77,26 @@ export default {
       <BaseContainer>
         <div class="video__content">
           <div class="video__header">
-            <h2>Mixing up your Solle<strong>Vital </strong> </h2>
+            <h2>Mixing up your Solle<strong>Vital </strong></h2>
             <div>
-              <div class="player">
+              <!-- <div class="player">
                 <vue-plyr>
                   <div
                     data-plyr-provider="youtube"
                     data-plyr-embed-id="ptwi3cNsm58"
                   ></div>
                 </vue-plyr>
+              </div> -->
+
+              <div class="player">
+                <iframe
+                  src="https://player.vimeo.com/video/906173569"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </div>
+
               <div class="directions">
                 <div class="directions__header">
                   <BaseAnimation :delay="100">
@@ -93,9 +104,10 @@ export default {
                   </BaseAnimation>
                   <BaseAnimation :delay="200">
                     <p class="directions__subtitle">
-                      Add the contents of one packet to 16-18 oz. of cool water. Use once
-                      daily, usually in the morning or afternoon, for best results.
-                      Solle<strong>Vital</strong> tastes the best if served ice cold!
+                      Add the contents of one packet to 16-18 oz. of cool water.
+                      Use once daily, usually in the morning or afternoon, for
+                      best results. Solle<strong>Vital</strong> tastes the best
+                      if served ice cold!
                     </p>
                   </BaseAnimation>
                 </div>
@@ -165,9 +177,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 .video {
-
+  padding-top: 1rem;
   overflow: hidden;
   &__header {
     text-align: center;
@@ -182,6 +194,14 @@ export default {
   &__content {
     position: relative;
     z-index: $zIndex_1;
+  }
+
+  &__header {
+    @media (max-width: $xs) {
+      h2 {
+        font-size: toRem(35);
+      }
+    }
   }
 
   &__bg {
@@ -202,8 +222,8 @@ export default {
       height: 100%;
     }
 
-    @media (max-width: $mobileSmall) {
-      height: 93%;
+    @media (max-width: $xs) {
+      height: 85%;
     }
   }
 
@@ -219,19 +239,26 @@ export default {
 
 .player {
   position: relative;
+  // border-radius: toRem(40);
   max-width: toRem(1034);
+  padding: 0;
   margin: 0 auto;
-  border-radius: toRem(20);
   overflow: hidden;
   margin-top: toRem(80);
   aspect-ratio: 1034 / 539;
 
+  iframe {
+      width: 0 auto;
+      padding: 0;
+      margin: 0;
+    }
+  
   @media (max-width: $mobile) {
     margin-top: toRem(30);
   }
-
-  @media (max-width: $mobileSmall) {
-    aspect-ratio: 359 / 187;
+  
+  @media (max-width: $xs) {
+    aspect-ratio: 320 / 187;
   }
 }
 
@@ -249,6 +276,7 @@ export default {
     @media (max-width: $mobile) {
       row-gap: toRem(4);
     }
+
   }
 
   &__title {
@@ -256,13 +284,13 @@ export default {
     font-weight: 500;
 
     @media (max-width: $mobile) {
-      font-size: toRem(12);
+      font-size: toRem(16);
     }
   }
 
   &__subtitle {
     @media (max-width: $mobile) {
-      font-size: toRem(10);
+      font-size: toRem(14);
       line-height: 150%;
     }
   }
@@ -346,7 +374,8 @@ export default {
       max-width: toRem(200);
     }
 
-    @media (max-width: $mobileSmall) {
+    @media (max-width: $xs) {
+      font-size: toRem(20);
       max-width: toRem(154);
     }
   }
@@ -358,8 +387,9 @@ export default {
       font-size: toRem(10);
       max-width: toRem(200);
     }
-    @media (max-width: $mobileSmall) {
-      max-width: toRem(154);
+    @media (max-width: $xs) {
+      font-size: toRem(14);
+      max-width: toRem(190);
     }
   }
 
@@ -368,6 +398,10 @@ export default {
 
     @media (max-width: $mobile) {
       font-size: toRem(10);
+    }
+
+    @media (max-width: $xs) {
+      font-size: toRem(14);
     }
   }
 
