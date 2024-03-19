@@ -51,8 +51,8 @@ export default defineComponent({
             <div class="health__subtitle">
               <BaseAnimation :delay="400">
                 <p>
-                  Solle<strong>Vital®</strong> is a premium plant blend consisting of
-                  three balanced ingredient groups:
+                  Solle<strong>Vital®</strong> is a premium plant blend
+                  consisting of three balanced ingredient groups:
                   <strong
                     >adaptogens, trace minerals, and our chlorophyll
                     blend.</strong
@@ -128,14 +128,13 @@ export default defineComponent({
   padding-top: 0;
 
   @media (max-width: $xs) {
-
     h2 {
       text-align: start;
       font-size: 2rem;
     }
     p {
-        font-size: toRem(14);
-      }
+      font-size: toRem(14);
+    }
   }
 
   &__wave {
@@ -219,15 +218,13 @@ export default defineComponent({
       object-fit: contain;
       object-position: center;
 
-
       @media (max-width: $xs) {
-      z-index: -2;
-      object-position:top;
-      max-width: toRem(500);
-      height: toRem(260);
-      aspect-ratio: 580 / 532;
-    }
-
+        z-index: -2;
+        object-position: top;
+        max-width: toRem(500);
+        height: toRem(260);
+        aspect-ratio: 580 / 532;
+      }
     }
   }
 }
@@ -324,7 +321,6 @@ export default defineComponent({
       margin: 0;
       column-gap: toRem(0);
     }
-
   }
 
   &__button {
